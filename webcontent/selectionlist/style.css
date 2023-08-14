@@ -1,0 +1,38 @@
+d-selection-list,
+d-selection-list-item,
+.d-selection-list-filter,
+.d-selection-list-content,
+d-pagination:not(:empty)
+{
+    display: block;
+    border: 0.1rem solid black;
+    margin: 1rem 1rem;
+    padding: 1rem 1rem;
+}
+
+d-pagination nav,
+d-pagination ul {
+	display: flex;
+}
+d-pagination nav {
+    width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+d-pagination li {
+	list-style: none;
+	align-self: center;
+	margin: auto 0.5rem;
+	padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    min-width: 48px;
+    border: .1rem solid black;
+    border-radius: 0.2rem;
+    text-align: center;
+}
+d-pagination li:not([data-page])
+{
+	cursor: not-allowed;
+}
+

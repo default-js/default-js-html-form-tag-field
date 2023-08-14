@@ -1,3 +1,3 @@
-import SelectionList from "./src/SelectionList"
+import FormTagFieldElement from "./src/FormTagFieldElement"
 
-export {SelectionList};
+export {FormTagFieldElement};

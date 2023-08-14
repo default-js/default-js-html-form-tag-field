@@ -1,9 +1,8 @@
-import { toNodename } from "../Helper";
+import { NODENAME__TAG_FIELD_INPUT_VALIDATION } from "./Constants";
 import { Component, define } from "@default-js/defaultjs-html-components";
 import { ExpressionResolver } from "@default-js/defaultjs-expression-language";
 
-
-export const NODENAME = toNodename("tag-field-input-validation");
+export const NODENAME = NODENAME__TAG_FIELD_INPUT_VALIDATION;
 
 const MARKER__ACTIVE = "active";
 const ATTR__CONDITION = "condition";
@@ -22,9 +21,8 @@ class HTMLFormTagFieldInputValidation extends Component {
 	async init() {
 		await super.init();
 
-		if (!this.#initialized) {
+		if (!this.#initialized)
 			this.#condition = (this.attr(ATTR__CONDITION) || "").trim();
-		}
 	}
 
 	async validate(value) {

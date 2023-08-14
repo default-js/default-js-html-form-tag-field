@@ -1,11 +1,11 @@
+import { NODENAME__TAG_FIELD, NODENAME__TAG_FIELD_INPUT_VALIDATION} from "./Constants";
 import { define } from "@default-js/defaultjs-html-components";
 import { BaseField } from "@default-js/defaultjs-html-form";
 import { Renderer } from "@default-js/defaultjs-template-language";
-import { toTemplateLoader, toNodename } from "../Helper";
-import "./HTMLTagFieldInputValidationElement";
-import { NODENAME as InputValidationNodename } from "./HTMLTagFieldInputValidationElement";
+import { toTemplateLoader } from "./Helper";
+import "./FormTagFieldInputValidationElement";
 
-const NODENAME = toNodename("tag-field");
+const NODENAME = NODENAME__TAG_FIELD;
 const TEMPLATE__ROOT = toTemplateLoader(`/${NODENAME}/root.tpl.html`);
 const TEMPLATE__ITEM = toTemplateLoader(`/${NODENAME}/item.tpl.html`);
 const KEYCODE__ENTER = 13;
@@ -90,7 +90,7 @@ class HTMLTagField extends BaseField {
 			const placeholder = this.attr(ATTR__PLACEHOLDER) || "Press \"Enter\" for value";
 			await Renderer.render({ container: root, data: { type, placeholder }, template: await TEMPLATE__ROOT(), mode: "prepend" });
 
-			this.#inputValidations = Array.from(root.find(InputValidationNodename));
+			this.#inputValidations = Array.from(root.find(NODENAME__TAG_FIELD_INPUT_VALIDATION));
 
 			this.#tagContainer = root.find("[tag-container]").first();
 			const input = this.#input = root.find("input").first();
